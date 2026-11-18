@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive 3D Globe</title>
+  <style>
+    body { margin: 0; background-color: #000; overflow: hidden; }
+  </style>
+  <!-- Load Globe.gl from CDN -->
+  <script src="https://unpkg.com"></script>
+</head>
+<body>
+  <div id="globeViz"></div>
+
+  <script>
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('//://unpkg.com')
+      .bumpImageUrl('//://unpkg.com')
+      .backgroundImageUrl('//://unpkg.com');
+
+    // Optional: Enable gentle auto-rotation when the user isn't dragging
+    world.controls().autoRotate = true;
+    world.controls().autoRotateSpeed = 0.5;
+  </script>
+</body>
+</html>
